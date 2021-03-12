@@ -18,7 +18,7 @@ import uuid
 import xlrd
 
 #Local Imports
-from local_settings import sourcePath,pyodbcDriver,pyodbcServer,pyodbcDatabase,pyodbcUser
+from local_settings02 import sourcePath,pyodbcDriver,pyodbcServer,pyodbcDatabase,pyodbcUser
 
 #Special Imports
 sys.path.append(r'C:\Dev\Utilities\SMTP')
@@ -92,7 +92,7 @@ def get_mapping_column(prov_column):
     except:
         mapping_column = None
         move_file("Rejected")
-        concludeImport("Failure","Cloumn Headers not found","Rejected")  
+        concludeImport("Failure","Column Headers not found","Rejected")  
         #logging.error(str(datetime.now())+' Column mappings not found')
         exit()
 
@@ -108,7 +108,7 @@ def clean_provider_headers(dirty_headers):
         #message = "Cleaning columns succeeded"
     except:
         logging.error(str(datetime.now())+' Column mapping failed')
-        concludeImport("Failure","Column Mappig failed","Rejected")  
+        concludeImport("Failure","Column Mapping failed","Rejected")  
         move_file("Rejected")   
         exit()
     return dirty_headers
@@ -131,8 +131,7 @@ def build_insert_statement(staging_headers,batchid,rowid,row):
         sql = sql + ",SubscriberExists,Anonymised,IsEmailOptedOut,IsBlockHashed,ProjectAzorian,IsTelephoneOptedOut,Processed,"
         sql = sql + "PermissionPassRequired,PermissionPassQueued,PermissionPassCompleted)"
         sql = sql + "VALUES (""'"+str(batchid)+"', '"+str(rowid) +"'," + param_values +",0,0,0,0,0,0,0,0,0,0)"
-        
-        print(sql)
+        #print(sql)
 
     except:
         logging.error(str(datetime.now())+' Sql row build failed at row '+ row[i])
@@ -192,7 +191,7 @@ def get_data_provider_name(DataProvider):
         cursor.execute(
             """
             SELECT TOP 1 Name
-            FROM InboxData.Subscriber.DataLicenceProvider
+            FROM InboxDev.Subscriber.DataLicenceProvider
             WHERE Id  =?""" 
             ,DataProvider
             )
@@ -253,7 +252,7 @@ def get_duplicate_Subscribers():
                 SELECT COUNT(DISTINCT STG.Email) 
                 FROM DataImport.Cleansing.StagingData STG
                 INNER JOIN Cleansing.Header H ON H.BatchId = STG.BatchId 
-                INNER JOIN InboxData.dbo.inbox_Subscriber S ON S.Email = STG.Email 
+                INNER JOIN InboxDev.dbo.inbox_Subscriber S ON S.Email = STG.Email 
                 WHERE H.Processed = 0
                 AND STG.PermissionPassRequired = 0
                 AND STG.Processed = 0"""
@@ -271,13 +270,11 @@ def get_duplicate_Subscribers():
 
     return duplicates
 
-def update_inbox_subscribers(BatchId):
+def update_inbox_subscribers():
     try:
         cnxn = generateCnxnObject()
-        sqlimport = "EXEC [DataImport].[Cleansing].[ImportSubscribers_Batched_SingleImport] @SingleBatchId=?"
-        params = (BatchId)
-        print(sqlimport,params)
-        cnxn.execute(sqlimport,params)
+        sqlimport = "EXEC [DataImport].[Cleansing].[ImportSubscribers_Batched]"
+        cnxn.execute(sqlimport)
         cnxn.commit()
 
     except:
@@ -379,7 +376,7 @@ def concludeImport(outcome,notificationMessage,path, defaultReceivers=""):
 def getCoverSheetDict(file):
     returnDict = {}
     try:
-        print(os.path.join(sourcePath,'queue',file))    
+        print(os.path.join(sourcePath,'queue',file))        
         coverSheet = pd.read_excel(os.path.join(sourcePath,'queue',file),sheet_name="CoverSheet")  
         returnDict['dataProvider'] = (coverSheet['Data Licence Provider'][0])
         returnDict['importType'] = (coverSheet['Import Type'][0])
@@ -413,7 +410,7 @@ def getCoverSheetDict(file):
 def processDataSheet(file):
     try:
         datafile = pd.read_excel(os.path.join(sourcePath,'queue',file), header = 0, sheet_name="Data")
-        #print(datafile)
+        print(datafile)
         provider_headers = (list(datafile.columns.values))
         staging_headers = clean_provider_headers(provider_headers)
         datafile.columns = staging_headers
@@ -453,7 +450,6 @@ def FileCountryCheck(file):
         print(os.path.join(sourcePath,'queue',file)) 
         datafile = pd.read_excel(os.path.join(sourcePath,'queue',file), header = 0, sheet_name="Data")
         returnDict['Country'] = (datafile['Country'])
-        
 
         CountrySet = set(returnDict['Country'])
         for Country in CountrySet:
@@ -487,13 +483,13 @@ def main():
     global DATAPROVIDER
     global BATCHID
     global DATAPROVIDERNAME
-
+    
     FILELOCATION = sourcePath+"\Queue"
-
+    #FILELOCATION = sourcePath+"\Rejected"
     
     for file in os.listdir(FILELOCATION):
+    
         if file.endswith(".xlsx"):
-            
             BATCHID = uuid.uuid4()
             DATETIMESTAMP = datetime.now().strftime(r"%Y%m%d%H%M%S")
             FILENAME = file
@@ -510,7 +506,7 @@ def main():
             logging.info(DATAPROVIDERNAME,' - ', file,' - file imported BATCHID ', BATCHID, DATETIMESTAMP)
             clean_data_in_staging_table()
             duplicateSubscribers = get_duplicate_Subscribers()
-            update_inbox_subscribers(BATCHID)
+            update_inbox_subscribers()
             assignPublications(headerName,coverSheet['publication'],coverSheet['importType'])
             updateHeaderLogs(BATCHID,EMPLOYEE,coverSheet['importType'],coverSheet['publication'])
             move_file("Succeeded")

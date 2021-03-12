@@ -1,0 +1,89 @@
+root - ERROR - 2020-10-05 13:43:25.638983 Connection to database failed
+root - ERROR - 2020-10-05 14:31:36.307554 Connection to database failed
+root - ERROR - 2020-10-05 14:43:53.429150 Connection to database failed
+root - ERROR - 2020-10-05 14:56:28.785619 Connection to database failed
+root - ERROR - 2020-10-05 15:33:59.204473 Failed to create Header in Header Table
+root - ERROR - 2020-10-05 15:44:03.467811 Failed to clean DataStaging Table
+root - ERROR - 2020-10-05 16:27:21.576810 Import Failed
+root - ERROR - 2020-10-05 16:29:03.318644 Import Failed
+root - ERROR - 2020-10-06 15:32:09.236293 Import Failed
+root - ERROR - 2020-10-06 15:49:05.612401 Import Failed
+root - ERROR - 2020-10-06 15:59:34.378885 Import Failed
+root - ERROR - 2020-10-07 14:04:22.125505 Import Failed
+root - ERROR - 2020-10-15 14:58:37.279186 Data Provider not found in - zoominfo-mist-q4-2020-nordics-itdirector.csv
+root - ERROR - 2020-10-19 10:52:46.114917 Failed to import/update InboxSubscribers
+root - ERROR - 2020-10-20 11:25:03.885386 Failed to move file to archive
+root - ERROR - 2020-10-22 12:21:34.467425 Failed to assign Publications
+root - ERROR - 2020-10-22 13:45:12.870925 Failed to run duplicate procedure
+root - ERROR - 2020-10-26 15:30:18.744566 Failed to import/update InboxSubscribers
+root - ERROR - 2020-10-29 14:41:14.493109 Failed to assign Publications
+root - ERROR - 2020-10-29 14:42:53.816693 Failed to UpdateHeaders
+root - ERROR - 2020-11-25 14:07:21.810386 Failed to create Header in Header Table
+root - ERROR - 2020-11-25 14:09:16.103117 Failed to create Header in Header Table
+root - ERROR - 2020-11-25 14:17:31.170800 Failed to create Header in Header Table
+root - ERROR - 2020-11-25 14:20:43.910078 Failed to create Header in Header Table
+root - ERROR - 2020-11-25 14:32:09.798624 Column mapping failed
+root - ERROR - 2020-11-25 14:47:41.852878 Column mapping failed
+root - ERROR - 2020-11-26 11:35:46.810844 Column mapping failed
+root - ERROR - 2020-11-26 11:55:26.122663 Column mapping failed
+root - ERROR - 2020-11-26 12:03:36.401608 Column mapping failed
+root - ERROR - 2020-11-26 12:23:10.643542 Failed to move file to archive
+root - ERROR - 2020-11-27 10:06:51.697544 Column mapping failed
+root - ERROR - 2020-11-27 10:12:24.768672 Column mapping failed
+root - ERROR - 2020-11-28 08:06:35.848720 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 08:08:45.366248 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 08:11:35.115674 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 08:13:04.239993 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 08:49:56.090766 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 08:57:56.492867 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-28 15:46:22.547301 Failed to import/update InboxSubscribers
+root - ERROR - 2020-11-29 17:50:28.174816 Failed to import/update InboxSubscribers
+root - ERROR - 2021-01-06 14:44:51.518408 Failed to move file to archive
+root - ERROR - 2021-01-28 13:37:48.695735 Failed to move file to archive
+root - ERROR - 2021-01-28 13:37:48.697734 Column mapping failed
+root - ERROR - 2021-01-28 13:37:48.947737 Failed to move file to archive
+root - ERROR - 2021-01-28 13:39:27.848186 Column mapping failed
+root - ERROR - 2021-01-28 13:39:27.949186 Failed to move file to archive
+root - ERROR - 2021-01-28 13:44:00.828762 Column mapping failed
+root - ERROR - 2021-01-28 13:44:00.930762 Failed to move file to archive
+root - ERROR - 2021-01-28 15:42:27.057273 Failed to import/update InboxSubscribers
+root - ERROR - 2021-01-29 14:09:28.032372 Failed to import/update InboxSubscribers
+root - ERROR - 2021-01-29 16:33:21.719704 Failed to import/update InboxSubscribers
+root - ERROR - 2021-02-05 15:41:45.958416 Column mapping failed
+root - ERROR - 2021-02-05 15:41:46.069417 Failed to move file to archive
+root - ERROR - 2021-02-05 15:47:47.121522 Column mapping failed
+root - ERROR - 2021-02-05 15:47:47.232523 Failed to move file to archive
+root - ERROR - 2021-02-05 15:56:33.638456 Failed to import/update InboxSubscribers
+root - ERROR - 2021-02-12 10:40:44.943507 Failed to import/update InboxSubscribers
+root - ERROR - 2021-02-12 14:16:20.182273 Failed to import/update InboxSubscribers
+root - ERROR - 2021-02-12 14:16:20.328775 Failed to move file to archive
+root - ERROR - 2021-02-18 10:39:20.226656 Column mapping failed
+root - ERROR - 2021-02-18 10:39:20.335697 Failed to move file to archive
+root - ERROR - 2021-02-18 10:43:38.091136 Column mapping failed
+root - ERROR - 2021-02-18 10:43:38.201513 Failed to move file to archive
+root - ERROR - 2021-02-18 11:02:01.808090 Failed to move file to archive
+root - ERROR - 2021-02-25 15:36:50.893541 Failed to move file to archive
+root - ERROR - 2021-02-25 15:44:57.850399 Failed to move file to archive
+root - ERROR - 2021-03-04 09:44:38.471805 Failed to move file to archive
+root - ERROR - 2021-03-04 09:45:26.819479 Failed to move file to archive
+root - ERROR - 2021-03-04 10:01:59.953084 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-08 11:19:11.159198 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-08 11:39:44.482641 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-08 12:01:03.179769 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-09 10:38:01.546634 Failed country validation - unknown reason
+root - ERROR - 2021-03-09 10:41:17.180216 Failed to move file to archive
+root - ERROR - 2021-03-09 14:38:19.041950 Failed to move file to archive
+root - ERROR - 2021-03-09 14:44:44.172409 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-09 15:13:23.444385 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-09 15:38:59.878605 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-09 15:50:42.497235 Failed to move file to archive
+root - ERROR - 2021-03-09 16:07:40.212851 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-09 16:07:40.391390 Failed to move file to archive
+root - ERROR - 2021-03-10 10:59:07.291642 Failed country validation - unknown reason
+root - ERROR - 2021-03-10 11:01:29.414061 Failed country validation - unknown reason
+root - ERROR - 2021-03-10 13:36:09.936363 Failed to import/update InboxSubscribers
+root - ERROR - 2021-03-10 15:45:55.083735 Failed country validation - unknown reason
+root - ERROR - 2021-03-10 15:54:26.858764 Failed to move file to archive
+root - ERROR - 2021-03-10 16:04:40.626709 Failed to move file to archive
+root - ERROR - 2021-03-10 16:45:41.334562 Failed country validation - unknown reason
+root - ERROR - 2021-03-10 21:06:58.094314 Failed to move file to archive
